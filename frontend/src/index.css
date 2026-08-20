@@ -1,0 +1,22 @@
+/* 1. RESET DEFAULT STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. BASE BODY STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a; /* Set warna dasar Navy agar saat loading tidak flicker putih */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Set font global */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. OPTIONAL: UTILITY UNTUK SELEKSI TEKS */
+::selection {
+  background-color: #1e293b;
+  color: #ffffff;
+}
