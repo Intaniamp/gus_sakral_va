@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomeScreen from "./screen/HomeScreen";
+import HomeScreen from "./screen/Homescreen";
 import ChatScreen from "./screen/ChatScreen";
 import LoginPage from "./screen/LoginPage";
 import AdminPanel from "./screen/AdminPanel";
