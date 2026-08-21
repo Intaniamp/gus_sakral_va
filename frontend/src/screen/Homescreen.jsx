@@ -14,12 +14,8 @@ const HomeScreen = () => {
       ========================================= */}
       <header className="homescreen__navbar">
         <div className="homescreen__brand">
-          <img
-            className="homescreen__brand-logo"
-            src={logo}
-            alt="Virtual Assistant"
-          />
-          <div className="homescreen__logo">Virtual Assistant</div>
+          <img className="homescreen__brand-logo" src={logo} alt="Gus Sakral" />
+          <div className="homescreen__logo">Gus Sakral</div>
         </div>
         <button
           className="homescreen__btn-login"
@@ -37,7 +33,7 @@ const HomeScreen = () => {
           <h1 className="homescreen__title">
             <Typewriter
               options={{
-                strings: ["Your Friendly Virtual Assistant"],
+                strings: ["Gus Sakral Virtual Assistant"],
                 autoStart: true,
                 loop: true,
               }}
@@ -82,12 +78,15 @@ const HomeScreen = () => {
           <div className="chat-mockup">
             <div className="chat-mockup__header">
               <div className="chat-mockup__avatar"></div>
-              <span className="chat-mockup__name">Virtual Assistant</span>
+              <span className="chat-mockup__name">
+                Gus Sakral Virtual Assistant
+              </span>
             </div>
 
             <div className="chat-mockup__body">
               <div className="chat-mockup__bubble">
-                Hi i'm your virtual asisstant, how can i help you today?
+                Hi i'm your Gus Sakral Virtual Assistant, how can i help you
+                today?
               </div>
               <div className="chat-mockup__options-box">
                 <button className="chat-mockup__option-btn">
@@ -150,10 +149,11 @@ const HomeScreen = () => {
           <div className="footer__description">
             <h3 className="footer__heading">TENTANG KAMI</h3>
             <p className="footer__desc-text">
-              Virtual Assistant Statistik Pemerintahan Kota Denpasar hadir untuk
-              memberikan kemudahan akses informasi seputar data statistik
-              sektoral, layanan ROMANTIK, dan panduan DOTA secara cepat, tepat,
-              dan otomatis bagi seluruh masyarakat serta instansi pemerintah.
+              Gus Sakral Virtual Assistant Statistik Pemerintahan Kota Denpasar
+              hadir untuk memberikan kemudahan akses informasi seputar data
+              statistik sektoral, layanan ROMANTIK, dan panduan DOTA secara
+              cepat, tepat, dan otomatis bagi seluruh masyarakat serta instansi
+              pemerintah.
             </p>
           </div>
 
@@ -184,25 +184,6 @@ const HomeScreen = () => {
         <div className="footer__divider"></div>
 
         {/* Sisi Bawah: Copyright & Social Media */}
-        <div className="footer__bottom">
-          <p className="footer__copyright">
-            © Badan Pusat Statistik Kota Denpasar — 2026
-          </p>
-          <div className="footer__socials">
-            <a href="#" className="social-icon">
-              YT
-            </a>
-            <a href="#" className="social-icon">
-              IG
-            </a>
-            <a href="#" className="social-icon">
-              FB
-            </a>
-            <a href="#" className="social-icon">
-              TW
-            </a>
-          </div>
-        </div>
       </footer>
     </div>
   );

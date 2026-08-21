@@ -20,7 +20,7 @@ const ChatScreen = () => {
         {
           id: 1,
           sender: "assistant",
-          text: "Halo! Saya virtual assistant, bagaimana saya bisa membantu Anda hari ini?",
+          text: "Halo! Saya Gus Sakral Virtual Assistant, bagaimana saya bisa membantu Anda hari ini?",
         },
       ]);
     }, 1000);
