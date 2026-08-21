@@ -59,7 +59,7 @@ const HomeScreen = () => {
       <section className="homescreen__about">
         {/* Sisi Kiri: Teks Penjelasan */}
         <div className="about__text-side">
-          <h2 className="about__title">Apa itu Virtual Assistant?</h2>
+          <h2 className="about__title">Apa itu Gus Sakral Virtual Assistant?</h2>
           <p className="about__description">
             Ini adalah layanan cerdas yang dirancang untuk mempermudah Anda
             dalam mencari informasi seputar layanan statistik di lingkungan
