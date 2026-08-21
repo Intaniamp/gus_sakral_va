@@ -10,9 +10,50 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0f172a; /* Set warna dasar Navy agar saat loading tidak flicker putih */
-  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Set font global */
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif; /* Set font global */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app-loading {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  color: #f8fafc;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(30, 64, 175, 0.28),
+      transparent 28%
+    ),
+    #0f172a;
+}
+
+.app-loading__spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(248, 250, 252, 0.2);
+  border-top-color: #38bdf8;
+  border-right-color: #fbbf24;
+  border-radius: 50%;
+  animation: app-loading-spin 0.8s linear infinite;
+}
+
+.app-loading__text {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+@keyframes app-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* 3. OPTIONAL: UTILITY UNTUK SELEKSI TEKS */

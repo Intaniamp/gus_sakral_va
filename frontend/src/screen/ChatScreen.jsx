@@ -8,6 +8,7 @@ const ChatScreen = () => {
   const [inputText, setInputText] = useState("");
   const [quickQuestions, setQuickQuestions] = useState([]);
   const [showQuickChat, setShowQuickChat] = useState(false);
+  const [isChatLoading, setIsChatLoading] = useState(true);
 
   // STATE BARU: Untuk melacak status bot sedang mengetik
   const [isTyping, setIsTyping] = useState(false);
@@ -23,6 +24,7 @@ const ChatScreen = () => {
           text: "Halo! Saya Gus Sakral Virtual Assistant, bagaimana saya bisa membantu Anda hari ini?",
         },
       ]);
+      setIsChatLoading(false);
     }, 1000);
 
     const questionsTimer = setTimeout(() => {
@@ -110,6 +112,15 @@ const ChatScreen = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, showQuickChat, isTyping]); // Tambahkan isTyping agar scroll ke bawah saat titik-titik muncul
+
+  if (isChatLoading) {
+    return (
+      <div className="app-loading" role="status" aria-live="polite">
+        <div className="app-loading__spinner" aria-hidden="true" />
+        <p className="app-loading__text">Menyiapkan ruang chat</p>
+      </div>
+    );
+  }
 
   const handleQuickChatClick = (id, questionText) => {
     setShowQuickChat(false);
