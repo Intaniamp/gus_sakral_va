@@ -64,7 +64,7 @@ const ChatScreen = () => {
     try {
       // NOTE: Pastikan URL ini sesuai dengan route di backend kamu ya!
       // Kalau sebelumnya '/api/faq/answer', ganti lagi ke situ.
-      const response = await fetch("http://localhost:3000/api/chat", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

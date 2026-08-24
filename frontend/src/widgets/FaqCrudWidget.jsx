@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import FaqCrudForm from "./FaqCrudForm";
 import "../ui/FaqCrudList.css";
 
-const API_BASE_URL = "http://localhost:3000/api/admin";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/admin`;
 
 const FaqCrudWidget = () => {
   const [faqs, setFaqs] = useState([]);
