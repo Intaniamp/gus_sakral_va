@@ -1,14 +1,17 @@
 const mysql = require('mysql2');
 
 const db = mysql.createPool({
-    host: '127.0.0.1',
-    port: 3308,
-    user: 'root',
-    password: '',
-    database: 'db_va_pkl',
+    host: 'mysql-db-va-pkl-gussakral.j.aivencloud.com',
+    port: 10073,
+    user: 'avnadmin',
+    password: process.env.DB_PASSWORD,
+    database: 'defaultdb',
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 db.getConnection((err, connection) => {
@@ -16,7 +19,7 @@ db.getConnection((err, connection) => {
         console.error('Yah, gagal konek ke database:', err);
         return;
     }
-    console.log('Yeay! Berhasil konek ke MySQL Laragon pakai Pool!');
+    console.log('Yeay! Berhasil konek ke Aiven!');
     connection.release();
 });
 
