@@ -3,8 +3,10 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh; /* Untuk mendukung tampilan di perangkat mobile */
   background-color: #ffffff;
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 /* --- HEADER --- */
@@ -30,7 +32,7 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #d9d9d9;
+  object-fit: cover;
   margin-right: 16px;
 }
 
@@ -55,6 +57,7 @@
 .message-row {
   display: flex;
   width: 100%;
+  flex-shrink: 0; /* PERBAIKAN: Mencegah baris chat tergencet */
 }
 
 .row-user {
@@ -83,7 +86,7 @@
   background-color: #e0e0e0;
   color: #000;
   /* Opsional: Membuat lengkungan bubble ala chat (ujung kanan bawah lancip) */
-  border-bottom-right-radius: 4px; 
+  border-bottom-right-radius: 4px;
 }
 
 .bubble-assistant {
@@ -97,6 +100,7 @@
 .quick-chat-container {
   display: flex;
   justify-content: flex-start;
+  flex-shrink: 0; /* PERBAIKAN: Mencegah kotak FAQ tergencet */
 }
 
 .quick-chat-box {
@@ -122,6 +126,11 @@
   cursor: pointer;
   font-size: 0.95rem;
   transition: background-color 0.2s ease;
+  
+  /* --- PERBAIKAN TEXT WRAPPING --- */
+  height: auto !important; /* Membiarkan tombol memanjang ke bawah */
+  white-space: normal; /* Mengizinkan teks untuk turun baris */
+  line-height: 1.4; /* Jarak antar baris teks */
 }
 
 .quick-chat-btn:hover {
@@ -160,7 +169,7 @@
 
 .send-btn {
   /* --- KUNCI MATI UKURAN (Solusi Anti-Penyok) --- */
-  flex-shrink: 0; 
+  flex-shrink: 0 !important;
   width: 50px !important;
   height: 50px !important;
   min-width: 50px !important;
@@ -169,21 +178,31 @@
   max-height: 50px !important;
 
   /* --- RESET PADDING & BOX MODEL --- */
-  padding: 0;
+  padding: 0 !important;
   box-sizing: border-box;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   appearance: none;
-  
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+
   /* --- GAYA ASLI --- */
   background-color: #283593;
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 50% !important;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+
+/* --- MENGUNCI UKURAN ICON DI DALAM TOMBOL (Untuk HP Samsung) --- */
+.send-btn svg {
+  width: 24px !important;
+  height: 24px !important;
+  flex-shrink: 0 !important;
+  display: block;
 }
 
 .send-btn:disabled {
@@ -200,7 +219,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px; 
+  gap: 6px;
   padding: 16px 20px !important;
   min-width: 60px;
   min-height: 24px;
@@ -224,11 +243,13 @@
 }
 
 @keyframes typingBounce {
-  0%, 80%, 100% { 
+  0%,
+  80%,
+  100% {
     transform: scale(0);
     opacity: 0.3;
   }
-  40% { 
+  40% {
     transform: scale(1);
     opacity: 1;
   }

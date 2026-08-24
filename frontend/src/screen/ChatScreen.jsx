@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "../ui/ChatScreen.css";
 import SendIcon from "@mui/icons-material/Send";
 import BackButton from "../widgets/BackButton";
+import logo from "../assets/logo.png";
 
 const ChatScreen = () => {
   const [messages, setMessages] = useState([]);
@@ -84,6 +85,12 @@ const ChatScreen = () => {
           setMessages((prev) => [...prev, newBotMessage]);
         } else {
           console.error("Gagal mendapatkan jawaban:", result.message);
+          const errorBotMessage = {
+            id: Date.now(),
+            sender: "assistant",
+            text: result.message || "Maaf, pertanyaan belum dapat diproses. Coba lagi nanti.",
+          };
+          setMessages((prev) => [...prev, errorBotMessage]);
         }
 
         // 3. Matikan animasi mengetik SETELAH jeda waktu selesai
@@ -153,7 +160,7 @@ const ChatScreen = () => {
           <BackButton />
         </div>
         <div className="chat-header__main">
-          <div className="header-avatar"></div>
+          <img className="header-avatar" src={logo} alt="Logo Gus Sakral" />
           <h2 className="header-title">Virtual Asisstant</h2>
         </div>
       </div>
